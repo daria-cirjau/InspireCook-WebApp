@@ -1,4 +1,4 @@
-package com.inspirecook.dto;
+package com.inspirecook.recipes.dto;
 
 import java.util.List;
 

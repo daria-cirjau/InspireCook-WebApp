@@ -1,8 +1,8 @@
-package com.inspirecook.controller;
+package com.inspirecook.recipes.controller;
 
-import com.inspirecook.dto.RecipeDTO;
-import com.inspirecook.entity.Recipe;
-import com.inspirecook.service.RecipeService;
+import com.inspirecook.recipes.dto.RecipeDTO;
+import com.inspirecook.recipes.entity.Recipe;
+import com.inspirecook.recipes.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

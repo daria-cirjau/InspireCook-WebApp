@@ -1,6 +1,6 @@
-package com.inspirecook.entity;
+package com.inspirecook.recipes.entity;
 
-import com.inspirecook.dto.RecipeDTO;
+import com.inspirecook.recipes.dto.RecipeDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

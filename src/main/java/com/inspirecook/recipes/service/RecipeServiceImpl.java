@@ -1,8 +1,8 @@
-package com.inspirecook.service;
+package com.inspirecook.recipes.service;
 
-import com.inspirecook.dto.RecipeDTO;
-import com.inspirecook.entity.Recipe;
-import com.inspirecook.repository.RecipeRepository;
+import com.inspirecook.recipes.dto.RecipeDTO;
+import com.inspirecook.recipes.entity.Recipe;
+import com.inspirecook.recipes.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

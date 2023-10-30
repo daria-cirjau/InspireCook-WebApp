@@ -1,7 +1,7 @@
-package com.inspirecook.service;
+package com.inspirecook.recipes.service;
 
-import com.inspirecook.dto.RecipeDTO;
-import com.inspirecook.entity.Recipe;
+import com.inspirecook.recipes.dto.RecipeDTO;
+import com.inspirecook.recipes.entity.Recipe;
 
 import java.util.List;
 
