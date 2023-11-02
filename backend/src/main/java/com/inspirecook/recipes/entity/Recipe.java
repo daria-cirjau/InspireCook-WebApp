@@ -97,4 +97,7 @@ public class Recipe {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+    public void setPictureFromPath(String picturePath) {
+        this.picture = pictureToByteArr(picturePath);
+    }
 }

@@ -67,7 +67,9 @@ public class RecipeServiceImpl implements RecipeService {
         if (recipeDTO.getPrepareTime() != null) {
             recipe.setPrepareTime(recipeDTO.getPrepareTime());
         }
-        // TODO: Add for image
+        if (recipeDTO.getPicture() != null) {
+            recipe.setPictureFromPath(recipeDTO.getPicture());
+        }
     }
 
 }
