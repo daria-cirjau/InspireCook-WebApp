@@ -1,1 +1,11 @@
+.toolbar {
+  background: #d7e5e6;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100px;
+}
 
+.toolbar img {
+  width: 100px;
+}

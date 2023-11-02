@@ -1,17 +1,34 @@
 <html>
 <body>
-<h1>first component</h1>
 
-<ul  class="list-unstyled">
-  <li *ngFor="let recipe of recipes" class="recipe mb-4 d-flex border p-2">
-    <img src="{{getImageFromByteString(recipe.picture)}}" alt="{{recipe.name}}" class="recipe-image mr-3" width="150">
-    <div class="recipe-details">
-      <h4>{{recipe.name}}</h4>
-      <p>{{recipe.description}}</p>
+<div class="accordion accordion-flush" id="accordionExample">
+  <div class="accordion-item" *ngFor="let recipe of recipes">
+    <h2 class="accordion-header" [attr.id]="'heading-'+getConcatenatedName(recipe.name)">
+      <div class="accordion-button d-flex"
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#id-'+getConcatenatedName(recipe.name)"
+              aria-expanded="false"
+              [attr.aria-controls]="'id-'+getConcatenatedName(recipe.name)">
+        <img src="{{getImageFromByteString(recipe.picture)}}" alt="{{recipe.name}}" class="recipe-image mr-3" width="200">
+        <div class="recipe-details p-lg-3">
+          <h4>{{recipe.name}}</h4>
+          <p>{{recipe.prepareTime}} minutes</p>
+        </div>
+      </div>
+    </h2>
+    <div [attr.id]="'id-'+getConcatenatedName(recipe.name)"
+         class="accordion-collapse collapse"
+         [attr.aria-labelledby]="'heading-' + getConcatenatedName(recipe.name)"
+         data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        {{recipe.description}}
+      </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
 
 <a [routerLink]="['/second-page']">Second Component</a>
+
 </body>
 </html>

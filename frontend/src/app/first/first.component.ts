@@ -25,4 +25,8 @@ export class FirstComponent {
   getImageFromByteString(byteString:string) {
     return  "data:image/png;base64," + byteString;
   }
+
+  getConcatenatedName(name:string){
+    return name.replaceAll(" ", "");
+  }
 }
