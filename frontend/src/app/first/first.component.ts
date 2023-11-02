@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-first',
@@ -7,13 +8,13 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent {
-  private apiUrl = "http://localhost:8080/recipe/getAll";
+  private apiUrl:string = "http://localhost:8080/recipe/getAll";
   recipes: any[]
   constructor(private http: HttpClient) {
     this.recipes = []
   }
 
-  getAllRecipes() {
+  getAllRecipes(){
     return this.http.get(this.apiUrl);
   }
 

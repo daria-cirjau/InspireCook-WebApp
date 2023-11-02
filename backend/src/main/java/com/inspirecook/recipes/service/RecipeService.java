@@ -10,4 +10,6 @@ public interface RecipeService {
     List<Recipe> getAll();
 
     Recipe getByName(String name);
+
+    void updateRecipe(String recipeName, RecipeDTO recipeDTO);
 }

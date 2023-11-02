@@ -41,4 +41,33 @@ public class RecipeServiceImpl implements RecipeService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "recipe with name:" + name + " NOT FOUND!");
     }
 
+    @Override
+    public void updateRecipe(String recipeName, RecipeDTO recipeDTO) {
+        Optional<Recipe> optionalRecipe = recipeRepository.findByName(recipeName);
+
+        if (optionalRecipe.isPresent()) {
+            Recipe recipe = optionalRecipe.get();
+            updateRecipeAttributes(recipe, recipeDTO);
+            recipeRepository.save(recipe);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recipe name:" + recipeName + " NOT FOUND!");
+        }
+    }
+
+    private void updateRecipeAttributes(Recipe recipe, RecipeDTO recipeDTO) {
+        if (recipeDTO.getDescription() != null) {
+            recipe.setDescription(recipeDTO.getDescription());
+        }
+        if (recipeDTO.getName() != null) {
+            recipe.setName(recipeDTO.getName());
+        }
+        if (recipeDTO.getIngredients() != null) {
+            recipe.setIngredients(recipeDTO.getIngredients());
+        }
+        if (recipeDTO.getPrepareTime() != null) {
+            recipe.setPrepareTime(recipeDTO.getPrepareTime());
+        }
+        // TODO: Add for image
+    }
+
 }

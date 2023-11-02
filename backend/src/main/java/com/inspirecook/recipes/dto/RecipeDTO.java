@@ -6,7 +6,7 @@ public class RecipeDTO {
     private String name;
     private List<String> ingredients;
     private String description;
-    private int prepareTime;
+    private Integer prepareTime;
 
     public RecipeDTO(String name, List<String> ingredients, String description, int prepareTime) {
         this.name = name;
@@ -39,11 +39,11 @@ public class RecipeDTO {
         this.description = description;
     }
 
-    public int getPrepareTime() {
+    public Integer getPrepareTime() {
         return prepareTime;
     }
 
-    public void setPrepareTime(int prepareTime) {
+    public void setPrepareTime(Integer prepareTime) {
         this.prepareTime = prepareTime;
     }
 }
