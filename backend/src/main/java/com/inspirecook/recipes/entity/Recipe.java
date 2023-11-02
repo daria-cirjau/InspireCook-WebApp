@@ -4,6 +4,8 @@ import com.inspirecook.recipes.dto.RecipeDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.*;
+import java.util.Base64;
 import java.util.List;
 
 @Document(collection = "recipes")
@@ -14,12 +16,14 @@ public class Recipe {
     private List<String> ingredients;
     private String description;
     private int prepareTime;
+    private String picture;
 
-    public Recipe(String name, List<String> ingredients, String description, int prepareTime) {
+    public Recipe(String name, List<String> ingredients, String description, int prepareTime, String picture) {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
         this.prepareTime = prepareTime;
+        this.picture = picture;
     }
 
     public Recipe(RecipeDTO recipeDTO) {
@@ -27,6 +31,20 @@ public class Recipe {
         this.ingredients = recipeDTO.getIngredients();
         this.description = recipeDTO.getDescription();
         this.prepareTime = recipeDTO.getPrepareTime();
+        this.picture = pictureToByteArr(recipeDTO.getPicture());
+    }
+
+    private String pictureToByteArr(String filePath) {
+        try {
+            FileInputStream fileInputStream = new FileInputStream(filePath);
+            byte[] buffer = new byte[fileInputStream.available()];
+            fileInputStream.read(buffer);
+            fileInputStream.close();
+
+            return Base64.getEncoder().encodeToString(buffer);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Recipe() {
@@ -70,5 +88,13 @@ public class Recipe {
 
     public void setPrepareTime(int prepareTime) {
         this.prepareTime = prepareTime;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
