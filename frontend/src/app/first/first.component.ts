@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-first',
@@ -22,5 +21,8 @@ export class FirstComponent {
     this.getAllRecipes().subscribe((data: any) => {
       this.recipes = data;
     })
+  }
+  getImageFromByteString(byteString:string) {
+    return  "data:image/png;base64," + byteString;
   }
 }
