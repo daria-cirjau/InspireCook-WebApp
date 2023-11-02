@@ -32,4 +32,5 @@ public class RecipeController {
     public Recipe getRecipesByName(@RequestParam("name") String name) {
         return recipeService.getByName(name);
     }
+//    @PutMapping("/update")
 }

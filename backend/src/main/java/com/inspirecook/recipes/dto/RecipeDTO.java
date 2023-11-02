@@ -7,12 +7,14 @@ public class RecipeDTO {
     private List<String> ingredients;
     private String description;
     private int prepareTime;
+    private String picture;
 
-    public RecipeDTO(String name, List<String> ingredients, String description, int prepareTime) {
+    public RecipeDTO(String name, List<String> ingredients, String description, int prepareTime, String picture) {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
         this.prepareTime = prepareTime;
+        this.picture = picture;
     }
 
     public String getName() {
@@ -45,5 +47,13 @@ public class RecipeDTO {
 
     public void setPrepareTime(int prepareTime) {
         this.prepareTime = prepareTime;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
