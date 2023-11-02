@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,7 @@ export class AppComponent{
   private apiUrl = "http://localhost:8080/recipe/getAll";
   recipes: any[]
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.recipes = []
   }
 
@@ -24,8 +25,6 @@ export class AppComponent{
   ngOnInit(): void {
     this.getAllRecipes().subscribe((data: any) => {
       this.recipes = data;
-      console.log(this.recipes)
-      console.log(data)
     })
   }
 }
