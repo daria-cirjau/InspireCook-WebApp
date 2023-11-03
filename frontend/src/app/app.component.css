@@ -1,9 +1,10 @@
 .toolbar {
   background: #c2e8c2;
   display: flex;
-  align-items: center;
+  align-items: normal;
   justify-content: space-between;
   height: 80px;
+  padding: 0 20px;
 }
 
 .toolbar img {
@@ -11,9 +12,7 @@
   align-self: baseline;
 }
 
-.toolbar a {
-  alignment: right;
+.toolbar a.login {
   margin-right: 30px;
-  margin-bottom: 20px;
+  align-self: center;
 }
-

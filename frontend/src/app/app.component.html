@@ -6,12 +6,12 @@
 </head>
 <body>
 <div class="toolbar" role="banner">
-  <img
-    alt="Logo"
-    src="./assets/logo_new.png"
-  />
-  <a [routerLink]="['/login']">Login</a>
+  <a [routerLink]="['']">
+    <img alt="Logo" src="./assets/logo_new.png" />
+  </a>
+  <a class="login" [routerLink]="['/login']">Login</a>
 </div>
+
 
 <ul id="dynamic-list" class="item-list">
 </ul>
