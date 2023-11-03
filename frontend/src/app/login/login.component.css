@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #c2e8c2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.welcome {
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 30px;
+}

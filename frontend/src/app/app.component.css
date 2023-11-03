@@ -1,11 +1,19 @@
 .toolbar {
-  background: #d7e5e6;
+  background: #c2e8c2;
   display: flex;
   align-items: center;
-  justify-content: left;
-  height: 100px;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .toolbar img {
-  width: 100px;
+  width: 180px;
+  align-self: baseline;
 }
+
+.toolbar a {
+  alignment: right;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+

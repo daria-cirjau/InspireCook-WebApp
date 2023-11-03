@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
+import { LoginComponent } from './login/login.component';
 import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +19,7 @@ import { RouterModule } from "@angular/router";
     RouterModule.forRoot([
       { path: '', component: FirstComponent},
       // { path: 'first-page', component: FirstComponent },
-      { path: 'second-page', component: SecondComponent },
+      { path: 'login', component: LoginComponent },
       // { path: '**', component: 404Component }
     ])
   ],
